@@ -3,8 +3,8 @@
 #include "../parse/munkres.hpp"
 #include "../parse/paf_score_graph.hpp"
 #include "../parse/refine_peaks.hpp"
-#include "train/generate_cmap.hpp"
-#include "train/generate_paf.hpp"
+#include "../train/generate_cmap.hpp"
+#include "../train/generate_paf.hpp"
 #include <torch/extension.h>
 #include <vector>
 
