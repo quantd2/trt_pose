@@ -1,8 +1,8 @@
-#include "parse/connect_parts.hpp"
-#include "parse/find_peaks.hpp"
-#include "parse/munkres.hpp"
-#include "parse/paf_score_graph.hpp"
-#include "parse/refine_peaks.hpp"
+#include "../parse/connect_parts.hpp"
+#include "../parse/find_peaks.hpp"
+#include "../parse/munkres.hpp"
+#include "../parse/paf_score_graph.hpp"
+#include "../parse/refine_peaks.hpp"
 #include "train/generate_cmap.hpp"
 #include "train/generate_paf.hpp"
 #include <torch/extension.h>
@@ -181,12 +181,12 @@ std::vector<torch::Tensor> connect_parts_torch(torch::Tensor connections, torch:
         .layout(torch::kStrided)
         .device(torch::kCPU)
         .requires_grad(false);
-    
+
     int N = counts.size(0);
     int K = topology.size(0);
     int C = counts.size(1);
     int M = connections.size(3);
-    
+
     auto objects = torch::full({N, max_count, C}, -1, options);
     auto object_counts = torch::zeros({N}, options);
     connect_parts_out_torch(object_counts, objects, connections, topology, counts, max_count);
