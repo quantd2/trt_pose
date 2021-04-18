@@ -20,7 +20,7 @@ setup(
         'trt_pose/parse/refine_peaks.cpp',
         'trt_pose/parse/munkres.cpp',
         'trt_pose/parse/connect_parts.cpp',
-        'trt_pose/plugins.cpp',
+        'trt_pose/plugins/plugins.cpp',
         'trt_pose/train/generate_cmap.cpp',
         'trt_pose/train/generate_paf.cpp',
     ])],
